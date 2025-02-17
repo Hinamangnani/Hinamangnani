@@ -97,11 +97,6 @@ select * from Employee;
 -- Q5  In the Company table, the statement that changes the name of “Urban Outfitters, Inc.” to “Urban Outfitters” .
 -- update Company set company_name = 'Mahindra,Inc' where companyid = 1;
 
---Q6 In ContactEmployee table, the statement that removes Dianne Connor’s contact
-event with Jack Lee (one statement).
-HINT: Use the primary key of the ContactEmployee table to specify the correct record to remove.
-  -- delete from ContactEmployee where employee_id = (select employee_id from employees where first_name = 'Dianne' and last_name = "Connor's" ) and employee_id = (select employee_id from employees where first_name = 'Jack' and last_name = 'Lee');
-
   --Q7 Write the SQL SELECT query that displays the names of the employees that
 have contacted Toll Brothers (one statement). Run the SQL SELECT query in
 MySQL Workbench. Copy the results below as well. 
