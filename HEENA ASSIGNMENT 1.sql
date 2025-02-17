@@ -41,8 +41,6 @@ insert into Contact values(1003, 3, 'Ravi', 'Kumar', '4321 Park Street', 'Bangal
 insert into Contact values(1004, 4, 'Sita', 'Patel', '7890 Palm Avenue', 'Ahmedabad', 'GJ', '380001', false, 'sita.patel@greenindia.com', '079-555-6789');
 insert into Contact values(1005, 5, 'Vikram', 'Singh', '1234 Lotus Lane', 'Chennai', 'TN', '600001', true, 'vikram.singh@greenindia.com', '044-555-9876');
 
-update Contact set first_name = 'Dianne' and last_name = "Connor’s" and email = 'dianne.connor@techind.com' where contact_id = 1001;
-
 
 select * from Contact;
 
@@ -86,8 +84,6 @@ insert into Employee value(103, 'Ravi', 'Kumar', 80000, '2020-05-12', 'project m
 insert into Employee value(104, 'Sita', 'Patel', 75000, '2021-12-12', 'Software Engineer', 'sita.patel@greenindia.com', '079-555-6789');
 insert into Employee value(105, 'Vikram', 'Singh', 40000, '2022-11-14', 'civil engineer', 'vikram.singh@greenindia.com', '044-555-9876');
 
-update Employee set first_name = 'Dianne' and last_name = "Connor’s" and email = 'dianne.connor@techind.com' where Employee_id = 101;
-
 
 select * from Employee;
 
@@ -97,10 +93,15 @@ select * from Employee;
 -- Q5  In the Company table, the statement that changes the name of “Urban Outfitters, Inc.” to “Urban Outfitters” .
 -- update Company set company_name = 'Mahindra,Inc' where companyid = 1;
 
+-- Q6 In ContactEmployee table, the statement that removes Dianne Connor’s contact
+event with Jack Lee (one statement).
+HINT: Use the primary key of the ContactEmployee table to specify the correct record to remove.
+-- delete from ContactEmployee where Contactemployee_id = (select Employee_id from Employee where first_name = 'Aarav' and last_name = 'Sharma' ) and Contactemployee_id = (select employee_id from Employee where first_name = 'Ravi' and last_name = 'Kumar');
+
   --Q7 Write the SQL SELECT query that displays the names of the employees that
 have contacted Toll Brothers (one statement). Run the SQL SELECT query in
 MySQL Workbench. Copy the results below as well. 
-  -- select e.first_name,e.last_name from contact e join company c on e.company_id = c.company_id where companyName = 'Toll Brothers';
+  -- select e.first_name,e.last_name from contact e join company c on e.company_id = c.company_id where companyName = 'Mahindra';
 
 -- Q8 What is the significance of “%” and “_” operators in the LIKE statement?
 -- % sign this will match first word of name and _ sign this will show any word of name like between or last word. 
